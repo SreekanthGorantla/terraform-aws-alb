@@ -39,13 +39,13 @@ resource "aws_lb" "this" {
     }
   }
 
-  dynamic "minimum_load_balancer_capacity" {
-    for_each = length(var.minimum_load_balancer_capacity) > 0 ? [var.minimum_load_balancer_capacity] : []
+  #dynamic "minimum_load_balancer_capacity" {
+  #  for_each = length(var.minimum_load_balancer_capacity) > 0 ? [var.minimum_load_balancer_capacity] : []
 
-    content {
-      capacity_units = minimum_load_balancer_capacity.value.capacity_units
-    }
-  }
+  #  content {
+  #    capacity_units = minimum_load_balancer_capacity.value.capacity_units
+  #  }
+  #}
 
   client_keep_alive                                            = var.client_keep_alive
   customer_owned_ipv4_pool                                     = var.customer_owned_ipv4_pool
